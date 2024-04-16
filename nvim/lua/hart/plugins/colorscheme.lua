@@ -12,12 +12,14 @@ return {
     {
         'dracula/vim',
         name = 'dracula',
+        event = "VeryLazy",
         config = function ()
 --            vim.cmd.colorscheme "dracula"
         end
     },
     {
         'catppuccin/vim',
+        event = "VeryLazy",
         name = 'catppuccin',
         config = function ()
             --    vim.cmd.colorscheme 'catppuccin_mocha'
@@ -26,6 +28,7 @@ return {
     {
         "folke/tokyonight.nvim",
         lazy = false,
+        event = "VeryLazy",
         priority = 1000,
         config = function()
             require("tokyonight").setup({

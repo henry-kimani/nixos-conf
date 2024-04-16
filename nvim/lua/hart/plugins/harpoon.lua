@@ -1,5 +1,6 @@
 return {
     'ThePrimeagen/harpoon',
+    event='VeryLazy',
     config = function()
         require("harpoon").setup({
             -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
@@ -42,7 +43,7 @@ return {
         vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
         vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end)
         vim.keymap.set("n", "<leader>n", function() ui.nav_next() end)                  -- navigates to next mark
-        vim.keymap.set("n", "<leader>p", function() ui.nav_prev() end)
+        vim.keymap.set("n", "<leader>m", function() ui.nav_prev() end)
 
     end
 }

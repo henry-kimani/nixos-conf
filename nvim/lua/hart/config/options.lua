@@ -1,6 +1,6 @@
 
 -- namespace
-o = vim.opt
+local o = vim.opt
 
 o.termguicolors = true
 o.number = true
