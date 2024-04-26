@@ -63,6 +63,8 @@ bindsym $mod+d exec ~/.config/rofi/bin/launcher
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# setting varibles key-bindings to look like for nvim 
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -196,34 +198,32 @@ set $surface0 	#313244
 set $base 	#11111b 	
 set $active #ea76cb
 
-# target                 title     bg    text   indicator  border
-client.focused           $active   $base $rosewater  $rosewater $active
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# target                 title     bg    text       indicator  border
+client.focused           $active   $base $rosewater $rosewater $active
+client.focused_inactive  $overlay0 $base $text      $rosewater $overlay0
+client.unfocused         $overlay0 $base $text      $rosewater $overlay0
+client.urgent            $peach    $base $peach     $overlay0  $peach
+client.placeholder       $overlay0 $base $text      $overlay0  $overlay0
 client.background        $base
 
 # bar
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocksconfig
-    i3bar_command i3bar --transparency
   colors {
     background         $base
-    statusline         $text
-    focused_statusline $text
+    statusline         #344
+    focused_statusline #ea76cb
     active_workspace   $base $text $blue
-    focused_separator  $base
+    focused_separator  #fff
     focused_workspace  $base #ea76cb $base
-    active_workspace   $base $base $blue
-    inactive_workspace $base $base $surface1
+    inactive_workspace $base $base $ea76cb
     urgent_workspace   $base $base $surface1
     binding_mode       $base $base $surface1
   }
 }
 
 # gaps
-gaps inner 15
+gaps inner 12
 # round borders
 # border_radius 5
 
@@ -232,9 +232,12 @@ gaps inner 15
 for_window [class=".*"] border pixel 5
 
 bindsym Control+Mod1+Delete exec ~/.config/i3/shutdown_menu/shutdown_menu
+
+
 # home background image
 # exec_always feh --bg-fill /home/hart/Downloads/501424-pagani-huayra.jpg
 
 exec_always nitrogen --restore
 
-
+# staring firefox hotkey Alt+f
+bindsym Mod1+f exec firefox-esr
