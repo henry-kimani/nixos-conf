@@ -1,5 +1,5 @@
 updateNvim.sh
-./nvim/lazy-lock.json
-./nvim/lazygit
-./nvim/lazy.nvim
-./nvim/lazygit.tar.gz
+/nvim/lazy-lock.json
+/nvim/lazygit
+/nvim/lazy.nvim
+/nvim/lazygit.tar.gz
