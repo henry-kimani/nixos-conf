@@ -2,4 +2,6 @@ nvim/lazygit
 nvim/lazy.nvim
 nvim/lazygit.tar.gz
 i3/safe
-*.sh
+updateNvim.sh
+updatei3.sh
+updateRofi.sh
