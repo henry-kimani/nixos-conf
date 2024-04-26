@@ -3,3 +3,5 @@ updateNvim.sh
 /nvim/lazygit
 /nvim/lazy.nvim
 /nvim/lazygit.tar.gz
+updatei3.sh
+!i3/safe
