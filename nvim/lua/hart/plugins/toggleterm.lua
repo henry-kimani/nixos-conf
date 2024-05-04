@@ -75,6 +75,12 @@ return {
             node:toggle()
         end
 
+        vim.api.nvim_set_keymap("n",
+            "<leader>nd",
+            "<cmd>lua _NODE_TOGGLE()<CR>",
+            {noremap=true, silent=true}
+        )
+
         local python = Terminal:new({ cmd = "python3", hidden = true })
         function _PYTHON_TOGGLE()
             python:toggle()
