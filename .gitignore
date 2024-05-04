@@ -6,3 +6,5 @@ updateNvim.sh
 updatei3.sh
 updateRofi.sh
 nvim/lua/hart/plugins/hide
+
+*.log
