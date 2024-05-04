@@ -17,14 +17,14 @@ return {
 --            vim.cmd.colorscheme "dracula"
         end
     },
-    {
+    --[[{
         'catppuccin/vim',
         event = "VeryLazy",
         name = 'catppuccin',
         config = function ()
             --    vim.cmd.colorscheme 'catppuccin_mocha'
         end
-    },
+    }]]--,
     {
         "folke/tokyonight.nvim",
         lazy = false,
