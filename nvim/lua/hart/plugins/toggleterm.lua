@@ -76,7 +76,7 @@ return {
         end
 
         vim.api.nvim_set_keymap("n",
-            "<leader>nd",
+            "<leader>d",
             "<cmd>lua _NODE_TOGGLE()<CR>",
             {noremap=true, silent=true}
         )
