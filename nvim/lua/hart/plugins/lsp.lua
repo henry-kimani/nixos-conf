@@ -85,6 +85,11 @@ return {
             end
         })
 
+        -- tailwindcss colorizer auto completion
+        cmp.config.formatting = {
+            format = require("tailwindcss-colorizer-cmp").formatter
+        }
+
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
