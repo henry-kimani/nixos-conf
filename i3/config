@@ -50,7 +50,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec uxterm 
 
 # kill focused window
 bindsym $mod+q kill
@@ -241,3 +241,4 @@ exec_always nitrogen --restore
 
 # staring firefox hotkey Alt+f
 bindsym Mod1+f exec firefox-esr
+bindsym Mod1+t exec gnome-terminal
