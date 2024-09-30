@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -36,17 +36,20 @@ markup=none
 # See the script for details.
 
 [volume]
-label= 
+label=   
 #label=VOL
+command=$SCRIPT_DIR/volume/volume
 interval=once
 signal=10
 #STEP=5%
+
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label= 
+label=   
+command=$SCRIPT_DIR/memory/memory
 separator=false
 interval=30
 
@@ -91,10 +94,11 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label= 
+label=   
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
 interval=10
-min_width=CPU 100.00%
-#separator=false
+min_width=100.00%
+# separator=false
 
 #[load_average]
 #label=LOAD
@@ -103,10 +107,10 @@ min_width=CPU 100.00%
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
-#label=BAT
-#label=⚡
-#interval=30
+[battery]
+label=⚡
+command=$SCRIPT_DIR/battery/battery
+interval=30
 
 # Date Time
 #
@@ -160,7 +164,7 @@ interval=5
 
 [shutdown]
 full_text= 
-command=~/.config/i3/shutdown_menu/shutdown_menu
+command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
 #FG_COLOR=#bbbbbb
 #BG_COLOR=#111111
 #HLFG_COLOR=#111111

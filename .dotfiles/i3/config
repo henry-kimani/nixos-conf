@@ -50,7 +50,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec uxterm 
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -209,13 +209,13 @@ client.background        $base
 
 # bar
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocksconfig
+    status_command SCRIPT_DIR=~/.config/i3/scripts i3blocks -c ~/.config/i3/i3blocksconfig
   colors {
     background         $base
     statusline         #344
     focused_statusline #ea76cb
     active_workspace   $base $text $blue
-    focused_separator  #fff
+#    focused_separator  #fff
     focused_workspace  $base #ea76cb $base
     inactive_workspace $base $base $ea76cb
     urgent_workspace   $base $base $surface1
