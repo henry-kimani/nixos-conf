@@ -1,10 +1,5 @@
-nvim/lazygit
-nvim/lazy.nvim
 nvim/lazygit.tar.gz
-i3/safe
-updateNvim.sh
-updatei3.sh
-updateRofi.sh
-nvim/lua/hart/plugins/hide
+i3/scripts
+nvim/lua/hart/plugins/lsp
 
 *.log

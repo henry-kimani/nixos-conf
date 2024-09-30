@@ -209,7 +209,7 @@ client.background        $base
 
 # bar
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocksconfig
+    status_command SCRIPT_DIR=./config/i3/scripts i3blocks -c ~/.config/i3/i3blocksconfig
   colors {
     background         $base
     statusline         #344
@@ -232,7 +232,7 @@ gaps inner 12
 #default_floating_border pixel 20
 for_window [class=".*"] border pixel 5
 
-bindsym Control+Mod1+Delete exec ~/.config/i3/shutdown_menu/shutdown_menu
+bindsym Control+Mod1+Delete exec $SCRIPT_DIR/shutdown_menu/shutdown_menu
 
 
 # home background image
