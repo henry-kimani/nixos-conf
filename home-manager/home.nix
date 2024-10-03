@@ -13,10 +13,12 @@
     pkgs.acpi # for the battery to display correctly on i3blocks
     pkgs.sysstat # performance monitoring tool
     pkgs.alacritty
+    pkgs.alacritty-theme
     pkgs.git
     pkgs.lf
     pkgs.bun
     pkgs.firefox
+    pkgs.kitty
 
     (pkgs.nerdfonts.override { fonts = [ "Hack" "Noto" ]; })
 
@@ -30,7 +32,7 @@
 
   programs.git = {
     enable = true;
-    userName = "henry-kimani";
+    userName = "kim henry";
     userEmail = "kimanihenry14489@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
@@ -39,6 +41,27 @@
 
   # Enabling Fonts
   fonts.fontconfig.enable = true;
+
+  # Enabling zsh
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+    # Plugins
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1]; }
+      ];
+    };
+
+    initExtra = ''
+      source ~/.p10k.zsh
+    '';
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
