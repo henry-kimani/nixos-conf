@@ -32,6 +32,11 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 # Enable unfree software
 nixpkgs.config.allowUnfree = true;
 
+
+# Enable zsh for all users
+users.defaultUserShell = pkgs.zsh;
+programs.zsh.enable = true;
+
 # By default, the NixOS VirtualBox demo image includes SDDM and Plasma.
 # If you prefer another desktop manager or display manager, you may want
 # to disable the default.
