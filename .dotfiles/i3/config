@@ -196,11 +196,13 @@ set $lavender 	#b4befe
 set $text 	#cdd6f4 
 set $overlay0 	#6c7086
 set $surface0 	#313244
-set $base 	#11111b 	
+set $base 	#11111b
+# set $base #2D2A2E
 set $active #ea76cb
+set $monokai #f38d70
 
 # target                 title     bg    text       indicator  border
-client.focused           $active   $base $rosewater $rosewater $active
+client.focused           $active   $base $rosewater $rosewater $monokai
 client.focused_inactive  $overlay0 $base $text      $rosewater $overlay0
 client.unfocused         $overlay0 $base $text      $rosewater $overlay0
 client.urgent            $peach    $base $peach     $overlay0  $peach
@@ -213,14 +215,15 @@ bar {
   colors {
     background         $base
     statusline         #344
-    focused_statusline #ea76cb
+    focused_statusline $monokai # status general color
     active_workspace   $base $text $blue
 #    focused_separator  #fff
-    focused_workspace  $base #ea76cb $base
-    inactive_workspace $base $base $ea76cb
+    focused_workspace  $base $monokai $base
+    inactive_workspace $base $base $monokai
     urgent_workspace   $base $base $surface1
     binding_mode       $base $base $surface1
   }
+  font pango:Hack Nerd Font 10
 }
 
 # gaps

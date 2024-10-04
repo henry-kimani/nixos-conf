@@ -163,6 +163,7 @@ interval=5
 #signal=11
 
 [shutdown]
+color=#eb6f92
 full_text= 
 command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
 #FG_COLOR=#bbbbbb
