@@ -22,7 +22,6 @@
 # GRUB
 boot.loader.grub = {
   enable = true;
-  version = 2;
   devices = [ "/dev/sda" ];
 };
 
@@ -40,8 +39,6 @@ programs.zsh.enable = true;
 # By default, the NixOS VirtualBox demo image includes SDDM and Plasma.
 # If you prefer another desktop manager or display manager, you may want
 # to disable the default.
-services.xserver.desktopManager.plasma5.enable = lib.mkForce false;
-services.displayManager.sddm.enable = lib.mkForce true;
 
 # Enable GDM/GNOME by uncommenting above two lines and two lines below.
 # services.xserver.displayManager.gdm.enable = true;
@@ -50,11 +47,14 @@ services.displayManager.sddm.enable = lib.mkForce true;
 services.displayManager = {
   autoLogin.user = null;
   autoLogin.enable = lib.mkForce false;
+  sddm.enable = lib.mkForce true;
+  sddm.theme = "${import ./modules/sddm-theme.nix { inherit pkgs; }}";
   # execCmd = "${pkgs.lightdm}/bin/lightdm";
 };
 
 services.xserver = {
   enable = true;
+  desktopManager.plasma5.enable = lib.mkForce false;
   windowManager.i3 = {
     enable = true;
     extraPackages = with pkgs; [
@@ -90,6 +90,9 @@ hart-user.userName = "hart";
 # \$ nix search wget
 environment.systemPackages = with pkgs; [
    wget vim neovim btop tmux home-manager rofi
+  # sddm theme dependencies
+  libsForQt5.qt5.qtquickcontrols2
+  libsForQt5.qt5.qtgraphicaleffects
 ];
 
 # Enable the OpenSSH daemon.
