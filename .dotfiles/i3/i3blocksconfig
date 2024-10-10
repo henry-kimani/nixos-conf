@@ -48,7 +48,7 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=   
+label=  
 command=$SCRIPT_DIR/memory/memory
 separator=false
 interval=30
@@ -94,10 +94,13 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=   
+label= 
 command=$SCRIPT_DIR/cpu_usage/cpu_usage
 interval=10
 min_width=100.00%
+COLOR_NORMAL=#fff1f3
+COLOR_WARN=#f9cc6c
+COLOR_CRIT=#fd6883
 # separator=false
 
 #[load_average]
@@ -115,7 +118,7 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+  %d-%m    %H:%M'
+command=date '+ %d-%m   %H:%M'
 interval=5
 
 # Generic media player support
@@ -163,9 +166,9 @@ interval=5
 #signal=11
 
 [shutdown]
-color=#eb6f92
+color=#fd6883
 full_text= 
-command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
+command=~/CS/config/.dotfiles/i3/shutdown_menu/shutdown_menu
 #FG_COLOR=#bbbbbb
 #BG_COLOR=#111111
 #HLFG_COLOR=#111111
