@@ -24,3 +24,8 @@ vim.opt.scrolloff = 8
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+
+--[[vim.cmd [[
+  silent! colorscheme monokai-pro
+   hi Normal guibg=#2d2a2e
+]] --
