@@ -98,4 +98,6 @@ environment.systemPackages = with pkgs; [
 # Enable the OpenSSH daemon.
 # services.openssh.enable = true;
 
+system.stateVersion = "24.05";
+
 }
