@@ -168,7 +168,7 @@ interval=5
 [shutdown]
 color=#fd6883
 full_text= 
-command=~/CS/config/.dotfiles/i3/shutdown_menu/shutdown_menu
+command=./shutdown_menu/shutdown_menu
 #FG_COLOR=#bbbbbb
 #BG_COLOR=#111111
 #HLFG_COLOR=#111111
