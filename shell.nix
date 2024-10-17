@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildPackages = [
-    vscode nodejs gcc
+    nodejs gcc
   ];
 };
 

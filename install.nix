@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
-pkg.stdenv.mkDerivation {
-  pname = "install";
+pkgs.stdenv.mkDerivation {
+  pname = "install.sh";
   version = "0.1";
 
   src = ./.;
@@ -10,8 +10,8 @@ pkg.stdenv.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/bin
-    cp install.sh $out/bin/myscript
-    chmod +x $out/bin/install
+    cp install.sh $out/bin
+    chmod +x $out/bin/install.sh
   '';
 }
 
