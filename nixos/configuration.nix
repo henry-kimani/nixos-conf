@@ -29,7 +29,7 @@ boot.loader.grub = {
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # Enable unfree software
-nixpkgs.config.allowUnfree = true;
+nixpkgs.config.allowUnfreePredicate = pkg:builtins.elem(lib.getName) [ "vscode" ];
 
 
 # Enable zsh for all users
@@ -44,47 +44,20 @@ programs.zsh.enable = true;
 # services.xserver.displayManager.gdm.enable = true;
 # services.xserver.desktopManager.gnome.enable = true;
 
-services.displayManager = {
-  autoLogin.user = null;
-  autoLogin.enable = lib.mkForce false;
-  sddm.enable = lib.mkForce true;
-  sddm.theme = "${import ./modules/sddm-theme.nix { inherit pkgs; }}";
-  # execCmd = "${pkgs.lightdm}/bin/lightdm";
-};
+# Enabling sddm together with its theme
+sddm.enable = true;
 
-services.xserver = {
-  enable = true;
-  desktopManager.plasma5.enable = lib.mkForce false;
-  windowManager.i3 = {
-    enable = true;
-    extraPackages = with pkgs; [
-      dmenu i3status i3lock i3blocks
-    ];
-  };
-};
+# Enabling x server
+x.enable = true;
 
 programs.dconf.enable = true;
 
 # Set your time zone.
 time.timeZone = "Africa/Nairobi";
 
-# Creating a user
-# users.users.hart = {
-#   isNormalUser = true;
-#   initialPassword = "1234";
-#   description = "Demo Hart";
-#   extraGroups = [ "networkmanager" "wheel" ];
-#   packages = with pkgs; [
-#     alacritty
-#     git
-#     lf
-#   ];
-# };
-
 # Creating a user via the module hart-user
 hart-user.enable = true;
 hart-user.userName = "hart";
-
 
 # List packages installed in system profile. To search, run:
 # \$ nix search wget
