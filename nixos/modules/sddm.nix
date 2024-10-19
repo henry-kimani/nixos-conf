@@ -4,7 +4,7 @@ let
 in
 {
   options.sddm = {
-    enable = lib.mkEnableOption "enable sddm-display manager module"
+    enable = lib.mkEnableOption "enable sddm-display manager module";
   };
 
   config = lib.mkIf cfg.enable {

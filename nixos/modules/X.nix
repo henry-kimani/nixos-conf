@@ -7,7 +7,7 @@ in
     enable = lib.mkEnableOption "enable x server";
   };
 
-  config = lib.mkIf cfg.enable = {
+  config = lib.mkIf cfg.enable {
     services.xserver = {
       enable = true;
       desktopManager.plasma5.enable = lib.mkForce false;
