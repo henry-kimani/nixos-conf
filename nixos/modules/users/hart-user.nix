@@ -17,7 +17,7 @@ in
   users.users.${cfg.userName}= {
     isNormalUser = true;
     initialPassword = "1234";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
  };
 }
