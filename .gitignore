@@ -1,5 +1,4 @@
-nvim/lazygit.tar.gz
-i3/scripts
-nvim/lua/hart/plugins/lsp
-
+.dotfiles/nvim/lazygit.tar.gz
+.dotfiles/i3/scripts/
+.dotfiles/nvim/lua/hart/plugins/lsp/
 *.log
