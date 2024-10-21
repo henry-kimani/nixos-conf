@@ -21,6 +21,7 @@
     pkgs.nitrogen
     pkgs.feh
     pkgs.imagemagick
+    pkgs.ripgrep
 
     (pkgs.nerdfonts.override { fonts = [ "Hack" "Noto" ]; })
 
