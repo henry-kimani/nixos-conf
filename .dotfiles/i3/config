@@ -158,6 +158,7 @@ assign [class="XTerm"] $ws1
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="org.gnome.Nautilus"] $ws3
+assign [class="Whatsapp-for-linux"] $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

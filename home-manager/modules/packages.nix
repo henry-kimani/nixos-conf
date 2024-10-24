@@ -22,6 +22,9 @@
     pkgs.feh
     pkgs.imagemagick
     pkgs.ripgrep
+    pkgs.cht-sh
+    pkgs.whatsapp-for-linux
+    pkgs.youtube-music
 
     (pkgs.nerdfonts.override { fonts = [ "Hack" "Noto" ]; })
 

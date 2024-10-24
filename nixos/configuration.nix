@@ -29,7 +29,9 @@ boot.loader.grub = {
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # Enable unfree software
-nixpkgs.config.allowUnfreePredicate = pkg:builtins.elem(lib.getName) [ "vscode" ];
+nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+   "microsoft-edge" "vscode"
+];
 
 
 # Enable zsh for all users
