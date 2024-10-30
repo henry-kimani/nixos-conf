@@ -50,7 +50,14 @@ programs.zsh.enable = true;
 sddm.enable = true;
 
 # Enabling x server
-x.enable = true;
+x.enable = false;
+
+# Enabling Wayland
+services.displayManager.sddm.wayland.enable = true;
+programs.hyprland = {
+  enable = true;
+  xwayland.enable = true;
+};
 
 programs.dconf.enable = true;
 
@@ -64,11 +71,21 @@ hart-user.userName = "hart";
 # List packages installed in system profile. To search, run:
 # \$ nix search wget
 environment.systemPackages = with pkgs; [
-   wget vim neovim btop tmux home-manager rofi
+  wget vim neovim btop tmux home-manager 
+  # rofi
+  rofi-wayland mako libnotify alacritty swww
+  (pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    })
+  )
   # sddm theme dependencies
   libsForQt5.qt5.qtquickcontrols2
   libsForQt5.qt5.qtgraphicaleffects
 ];
+
+# To handle interactions between applications
+xdg.portal.enable = true;
+xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 # Enable the OpenSSH daemon.
 # services.openssh.enable = true;
