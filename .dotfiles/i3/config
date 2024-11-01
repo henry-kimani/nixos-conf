@@ -222,7 +222,7 @@ bar {
   colors {
     background         $base
     statusline         #344
-    focused_statusline $monokai # status general color
+    # focused_statusline $monokai # status general color
     active_workspace   $base $text $blue
 #    focused_separator  #fff
     focused_workspace  $base $monokai $base
