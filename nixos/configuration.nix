@@ -50,10 +50,10 @@ programs.zsh.enable = true;
 sddm.enable = true;
 
 # Enabling x server
-x.enable = true;
+x.enable = false;
 
 # Enabling Sway with Wayland
-swayland.enable = false;
+swayland.enable = true;
 
 programs.dconf.enable = true;
 

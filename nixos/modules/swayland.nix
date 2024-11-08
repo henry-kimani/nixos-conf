@@ -19,10 +19,12 @@ in
 
     enviroment.systemPackages = with pkgs; [
       rofi-wayland mako libnotify
-      (pkgs.waybar.overrideAttrs (oldAttrs: {
+      (pkgs.waybar = { 
+        enable = true;
+        overrideAttrs (oldAttrs: {
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
         })
-      )
+      })
     ];
   };
 }
