@@ -1,8 +1,3 @@
-import = [
-    "~/.config/alacritty/themes/themes/monokai_pro.toml"
-]
-
-live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
@@ -13,7 +8,7 @@ dynamic_padding = true
 opacity = 1 
 
 [font]
-size = 11.0
+size = 8.0
 
 [font.bold]
 family = "Hack Nerd Font"
@@ -26,5 +21,12 @@ family = "Hack Nerd Font"
 
 [font.normal]
 family = "Hack Nerd Font"
+
+[general]
+
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/themes/monokai_pro.toml"
+]
 
 
