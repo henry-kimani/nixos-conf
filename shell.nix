@@ -1,8 +1,8 @@
-{ config, pkgs, ...}: 
+{ pkgs, ...}: 
 
 pkgs.mkShell {
-  buildPackages = [
-    nodejs gcc
+  nativeBuildPackages = [
+    pkgs.nodejs_22 pkgs.gcc
   ];
-};
+}
 

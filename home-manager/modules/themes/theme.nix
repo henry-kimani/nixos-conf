@@ -24,7 +24,7 @@
         gtk.enable = true;
         x11.enable = true;
         name = name;
-        size = 16;
+        size = 18;
         package = 
           pkgs.runCommand "moveUp" {} ''
             mkdir -p $out/share/icons
@@ -36,7 +36,7 @@
         };
     in
       getFrom 
-        "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.0/Fuchsia-Amber.tar.gz"
-        "sha256-bgEQ/l56TaxUdMB3iyJsMuLuc33mu5KMljPl2iSFNB4="
+        "https://github.com/ful1e5/fuchsia-cursor/releases/download/v2.0.1/Fuchsia-Amber.tar.xz"
+        "sha256-EtUxqAtMqvfQwrlA90Qcm8ffThD1OAmOSeFECF1uwrE"
         "Fuchsia-Amber";
 }

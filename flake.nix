@@ -24,7 +24,7 @@
     };
 
     homeConfigurations = {
-      hart = inputs.home-manager.lib.homeManagerConfiguration {
+      henry = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home-manager/home.nix ];
       };

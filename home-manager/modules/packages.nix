@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -19,12 +27,22 @@
     pkgs.kdePackages.dragon
     pkgs.gcc
     pkgs.nitrogen
-    pkgs.feh
-    pkgs.imagemagick
+    pkgs.feh # View images
+    pkgs.imagemagick # Take screenshots and edit images via CLI
     pkgs.ripgrep
     pkgs.cht-sh
-    pkgs.whatsapp-for-linux
     pkgs.youtube-music
+    pkgs.brightnessctl
+    pkgs.flameshot # Take screenshots
+    pkgs.networkmanagerapplet
+    pkgs.unzip
+    pkgs.libreoffice-still
+    pkgs.totem
+
+    pkgs.microsoft-edge
+    pkgs.discord
+    pkgs.vscode
+    pkgs.nodejs_22
 
     (pkgs.nerdfonts.override { fonts = [ "Hack" "Noto" ]; })
 

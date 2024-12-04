@@ -5,8 +5,8 @@
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "hart";
-  home.homeDirectory = "/home/hart";
+  home.username = "henry";
+  home.homeDirectory = "/home/henry";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
