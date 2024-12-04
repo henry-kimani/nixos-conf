@@ -2,5 +2,6 @@
 {
   imports = [
     ./hart-user.nix
+    ./henry-user.nix
   ];
 }

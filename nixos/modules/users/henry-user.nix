@@ -5,7 +5,7 @@ in
 {
   options.henry-user = {
     enable = lib.mkEnableOption "enable user module";
-    userName = {
+    userName = lib.mkOption {
       default = "henry";
       description = ''
         henry
