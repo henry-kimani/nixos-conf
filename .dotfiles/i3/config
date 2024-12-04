@@ -37,10 +37,17 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -67,10 +74,10 @@ bindsym $mod+d exec rofi -show drun
 # setting varibles key-bindings to look like for nvim 
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -79,10 +86,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -91,10 +98,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym Mod1+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym Mod1+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -126,7 +133,7 @@ set $ws5 "5:  "
 set $ws6 "6:  "
 set $ws7 "7:  "
 set $ws8 "8:  "
-set $ws9 "9"
+set $ws9 "9:  "
 set $ws10 "10"
 
 # switch to workspace
@@ -156,9 +163,25 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Force certain windows to move certain workspaces
 assign [class="XTerm"] $ws1
 assign [class="Alacritty"] $ws1
+
 assign [class="firefox"] $ws2
+assign [class="Microsoft-edge"] $ws2
+
 assign [class="org.gnome.Nautilus"] $ws3
+assign [class="libreoffice-startcenter"] $ws3
+assign [class="libreoffice-writer"] $ws3
+assign [class="libreoffice-calc"] $ws3
+
+assign [class="dragonplayer" ] $ws5
+
+assign [class="YouTube Music" ] $ws6
+assign [class="YouTube Music" ] $ws6
+
 assign [class="Whatsapp-for-linux"] $ws7
+for_window [class="Microsoft-edge" instance="^crx__hnpfjngllnobngcgfapefoaidbinmjnm$" ] move container to workspace number $ws7
+for_window [class="Microsoft-edge" window_role="GtkFileChooserDialog" ] move container to workspace number $ws7
+
+assign [class="discord"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -253,3 +276,6 @@ exec_always nitrogen --restore
 # staring firefox hotkey Alt+f
 bindsym Mod1+f exec firefox
 bindsym Mod1+t exec gnome-terminal
+bindsym $mod+Shift+s exec flameshot
+
+

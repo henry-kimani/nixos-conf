@@ -37,11 +37,21 @@ markup=none
 
 [volume]
 label=   
-#label=VOL
-command=$SCRIPT_DIR/volume/volume
-interval=once
-signal=10
-#STEP=5%
+command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
+interval=persist
+# signal=1
+SUBSCRIBE=1
+LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+AUDIO_HIGH_SYMBOL='  '
+AUDIO_MED_THRESH=50
+AUDIO_MED_SYMBOL='  '
+AUDIO_LOW_THRESH=0
+AUDIO_LOW_SYMBOL='  '
+DEFAULT_COLOR="#ffffff"
+USE_ALSA_NAME=0
+USE_DESCRIPTION=0
+UTED_COLOR="#a0a0a0"
+STEP=5%
 
 
 # Memory usage
@@ -51,6 +61,7 @@ signal=10
 label=  
 command=$SCRIPT_DIR/memory/memory
 separator=false
+percent=false
 interval=30
 
 #[memory]
