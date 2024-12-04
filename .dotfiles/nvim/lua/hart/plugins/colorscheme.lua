@@ -1,13 +1,22 @@
 return {
     {
         "loctvl842/monokai-pro.nvim",
+        
         config = function()
             require("monokai-pro").setup({
                 terminal_colors = true,
                 filter = "octagon",
+                bold = true,
             })
             vim.cmd.colorscheme "monokai-pro"
         end
+    },
+    {
+      "ellisonleao/gruvbox.nvim", 
+      priority = 1000 , 
+      config = function() 
+--        vim.cmd.colorscheme "gruvbox"
+      end, 
     },
     {
         'dracula/vim',

@@ -13,6 +13,7 @@ o.linebreak = true
 o.showbreak = "  » "
 o.splitbelow = true
 o.splitright = true
+o.colorcolumn = "80";
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
