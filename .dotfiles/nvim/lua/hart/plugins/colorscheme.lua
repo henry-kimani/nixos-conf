@@ -8,6 +8,11 @@ return {
                 filter = "octagon",
                 bold = true,
             })
+      --[[
+            vim.cmd [[
+              autocmd BufEnter *.md setlocal colorscheme=gruvbox
+            ]]
+
             vim.cmd.colorscheme "monokai-pro"
         end
     },

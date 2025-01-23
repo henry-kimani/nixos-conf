@@ -59,6 +59,7 @@ return {
 
         local Terminal  = require('toggleterm.terminal').Terminal
 
+        -- LAZYGIT
         local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
         function _LAZYGIT_TOGGLE()
             lazygit:toggle()
@@ -70,6 +71,7 @@ return {
             {noremap = true, silent = true}
         )
 
+        -- NODE
         local node = Terminal:new({ cmd = 'node', hidden = true })
         function _NODE_TOGGLE()
             node:toggle()
@@ -81,10 +83,21 @@ return {
             {noremap=true, silent=true}
         )
 
+        -- PYTHON
         local python = Terminal:new({ cmd = "python3", hidden = true })
         function _PYTHON_TOGGLE()
             python:toggle()
         end
 
+        -- BTOP
+        local btop = Terminal:new({ cmd = "btop", hidden = true });
+        function _BTOP_TOGGLE()
+            btop:toggle()
+        end
+        vim.api.nvim_set_keymap("n",
+          "<leader>b",
+          "<cmd>lua _BTOP_TOGGLE()<CR>",
+          {noremap=true, silent=true}
+        )
     end
 }
