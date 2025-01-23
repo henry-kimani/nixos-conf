@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 k.set('n', '<leader>e', vim.cmd.Ex)
 k.set('n', '<C-s>', vim.cmd.w)
 k.set('n', '<C-`>', vim.cmd.terminal)
+k.set('n', '<leader>t', vim.cmd.Trouble)
 
 k.set('n', '<leader>r', '<cmd>nohlsearch<CR>')
 
