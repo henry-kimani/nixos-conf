@@ -30,3 +30,9 @@ vim.opt.wrap = false
   silent! colorscheme monokai-pro
    hi Normal guibg=#2d2a2e
 ]] --
+
+vim.filetype.add({
+  extension = {
+    mdx = "mdx"
+  }
+})
