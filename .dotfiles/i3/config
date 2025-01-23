@@ -173,6 +173,7 @@ assign [class="libreoffice-writer"] $ws3
 assign [class="libreoffice-calc"] $ws3
 
 assign [class="dragonplayer" ] $ws5
+assign [class="Totem" ] $ws5
 
 assign [class="YouTube Music" ] $ws6
 assign [class="YouTube Music" ] $ws6
