@@ -4,13 +4,43 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-ls.add_snippets("typescriptreact", {
-  s("reactcomponent", {
-    t("export default function "),
+ls.add_snippets("astro", {
+  s("style", {
+    t("<style>"),
     i(1),
-    t("(){"),
-    t("return();"),
-    t("}"),
+    t("</style>"),
+  }),
+  s("a", {
+    t("<a href=\""),
+    i(1),
+    t("\">"),
+    i(2),
+    t("</a>"),
+  }),
+  s("script", {
+    t("<script>"),
+    i(1),
+    t("</script>"),
+  }),
+  s("li", {
+    t("<li>"),
+    i(1),
+    t("</li>"),
+  }),
+  s("ol", {
+    t("<ol>"),
+    i(1),
+    t("</ol>"),
+  }),
+  s("ul", {
+    t("<ul>"),
+    i(1),
+    t("</ul>"),
+  }),
+  s("button", {
+    t("<button>"),
+    i(1),
+    t("</button>"),
   }),
   s("main", {
     t("<main>"),
