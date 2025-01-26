@@ -36,3 +36,4 @@ vim.filetype.add({
     mdx = "mdx"
   }
 })
+
