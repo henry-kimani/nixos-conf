@@ -38,6 +38,17 @@
     pkgs.unzip
     pkgs.libreoffice-still
     pkgs.totem
+    pkgs.gimp
+    pkgs.inkscape
+    pkgs.pnpm # javascript package manager
+    pkgs.blender
+    pkgs.pavucontrol # GUI to control my mic and speaker
+    pkgs.pamixer # CLI to control my mic
+    pkgs.godot_4 # game engine
+
+    pkgs.clang-tools # C C++ language server
+    pkgs.lua-language-server # lua language server
+    pkgs.jdt-language-server # java language server
 
     pkgs.microsoft-edge
     pkgs.discord
