@@ -1,8 +1,8 @@
 { pkgs, ...}: 
 
 pkgs.mkShell {
-  nativeBuildPackages = [
+  packages = [
     pkgs.nodejs_22 pkgs.gcc
+    pkgs.python314
   ];
 }
-

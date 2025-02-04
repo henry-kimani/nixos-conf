@@ -45,6 +45,7 @@
     pkgs.pavucontrol # GUI to control my mic and speaker
     pkgs.pamixer # CLI to control my mic
     pkgs.godot_4 # game engine
+    pkgs.itch # itch.io
 
     pkgs.clang-tools # C C++ language server
     pkgs.lua-language-server # lua language server
