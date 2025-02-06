@@ -1,6 +1,6 @@
 return {
     'ThePrimeagen/harpoon',
-    event='VeryLazy',
+    lazy = false,
     config = function()
         require("harpoon").setup({
             -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.

@@ -2,7 +2,7 @@
 
 # creates create symlinks for my dotfiles
 
-SRC_DIR=$(pwd)/.dotfiles
+SRC_DIR=$(pwd)/dotfiles
 DEST_DIR=~/.config
 
 MY_DOTFILES=(i3 alacritty tmux nvim rofi p10k)
