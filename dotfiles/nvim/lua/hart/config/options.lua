@@ -15,21 +15,17 @@ o.splitbelow = true
 o.splitright = true
 o.colorcolumn = "80";
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
 
-vim.opt.scrolloff = 8
+o.scrolloff = 8
 
-vim.opt.smartindent = true
+o.smartindent = true
 
-vim.opt.wrap = false
+o.wrap = false
 
---[[vim.cmd [[
-  silent! colorscheme monokai-pro
-   hi Normal guibg=#2d2a2e
-]] --
 
 vim.filetype.add({
   extension = {

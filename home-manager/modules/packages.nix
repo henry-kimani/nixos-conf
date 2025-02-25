@@ -46,6 +46,11 @@
     pkgs.pamixer # CLI to control my mic
     pkgs.godot_4 # game engine
     pkgs.itch # itch.io
+    pkgs.brave # Browser
+
+    pkgs.cargo # Rust package manager
+    pkgs.rust-analyzer # Rust language server
+    pkgs.rustc # Rust compiler
 
     pkgs.clang-tools # C C++ language server
     pkgs.lua-language-server # lua language server
@@ -55,8 +60,6 @@
     pkgs.discord
     pkgs.vscode
     pkgs.nodejs_22
-
-    (pkgs.nerdfonts.override { fonts = [ "Hack" "Noto" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

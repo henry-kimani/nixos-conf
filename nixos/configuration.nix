@@ -2,21 +2,12 @@
 
 {
   imports = [ 
-#    <nixpkgs/nixos/modules/installer/virtualbox-demo.nix> 
     ./hardware-configuration.nix
     ./modules/bundle.nix
   ];
 
-  # Let demo build as a trusted user.
-# nix.settings.trusted-users = [ "demo" ];
-
 # GRUB
 boot.loader = {
-#   grub = {
-#     enable = true;
-#     devices = [ "/dev/sda" ];
-#   };
-
    systemd-boot.enable = true;
    efi.canTouchEfiVariables = true;
 };
@@ -29,13 +20,9 @@ networking.hostName = "nixos";
 # networking.proxy.default = "http://user:password@proxy:port/";
 # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-# Enable nix-flakes
+# Enable nix experimental features
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-# Enable unfree software
-# nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-#    "microsoft-edge" "vscode"
-# ];
 nixpkgs.config.allowUnfree = true;
 
 # Enable zsh for all users
@@ -66,7 +53,6 @@ henry-user.enable = true;
 henry-user.userName = "henry";
 
 # List packages installed in system profile. To search, run:
-# \$ nix search wget
 environment.systemPackages = with pkgs; [
    wget vim neovim btop tmux home-manager rofi
   # sddm theme dependencies
