@@ -8,8 +8,8 @@
 
 # GRUB
 boot.loader = {
-   systemd-boot.enable = true;
-   efi.canTouchEfiVariables = true;
+  systemd-boot.enable = true;
+  efi.canTouchEfiVariables = true;
 };
 
 # Enable Networking
@@ -51,6 +51,9 @@ hart-user.userName = "hart";
 # Creating the user henry
 henry-user.enable = true;
 henry-user.userName = "henry";
+
+# Enabling podman module
+podman.enable = true;
 
 # List packages installed in system profile. To search, run:
 environment.systemPackages = with pkgs; [

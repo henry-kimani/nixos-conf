@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
-let
-cfg = config.hart-user;
-in
+  let
+    cfg = config.hart-user;
+  in
 {
   options.hart-user = {
     enable = lib.mkEnableOption "enable user module";
@@ -13,11 +13,11 @@ in
     };
   };
 
- config = lib.mkIf cfg.enable { 
-  users.users.${cfg.userName}= {
-    isNormalUser = true;
-    initialPassword = "1234";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+  config = lib.mkIf cfg.enable { 
+    users.users.${cfg.userName}= {
+      isNormalUser = true;
+      initialPassword = "1234";
+      extraGroups = [ "networkmanager" "wheel" "audio" ];
+    };
   };
- };
 }

@@ -6,5 +6,6 @@
     ./X.nix
     ./bluetooth.nix
     ./pipewire.nix
+    ./podman.nix
   ];
 }

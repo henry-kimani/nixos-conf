@@ -17,7 +17,7 @@ in
     users.users.${cfg.userName} = {
       isNormalUser = true;
       description = "henry";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "podman" ];
     };
   };
 }
