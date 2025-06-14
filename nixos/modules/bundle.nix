@@ -7,5 +7,6 @@
     ./bluetooth.nix
     ./pipewire.nix
     ./podman.nix
+    ./fonts.nix
   ];
 }

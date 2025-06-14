@@ -55,6 +55,9 @@ henry-user.userName = "henry";
 # Enabling podman module
 podman.enable = true;
 
+  # Enabling Fonts
+  fonts.enable = true;
+
 # List packages installed in system profile. To search, run:
 environment.systemPackages = with pkgs; [
    wget vim neovim btop tmux home-manager rofi

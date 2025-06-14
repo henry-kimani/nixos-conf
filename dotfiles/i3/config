@@ -18,9 +18,9 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans 8
+font pango:Hack Nerd Font 8
 
-font pango:Hack Mono 8
+# font pango:Dejavu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -39,17 +39,17 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+# bindsym XF86AudioMute --release exec pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+# bindsym XF86AudioLowerVolume --release exec pkill -RTMIN+1 i3blocks
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+# bindsym XF86AudioRaiseVolume --release exec pkill -RTMIN+1 i3blocks
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -65,9 +65,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec ~/.config/rofi/bin/launcher
 bindsym $mod+d exec rofi -show drun
-# A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
@@ -177,11 +175,10 @@ assign [class="libreoffice-calc"] $ws3
 assign [class="dragonplayer" ] $ws5
 assign [class="Totem" ] $ws5
 
-assign [class="YouTube Music" ] $ws6
+assign [class="com.github.th_ch.youtube_music" ] $ws6
 
 assign [class="Whatsapp-for-linux"] $ws7
 for_window [class="Microsoft-edge" instance="^crx__hnpfjngllnobngcgfapefoaidbinmjnm$" ] move container to workspace number $ws7
-# for_window [class="Microsoft-edge" window_role="GtkFileChooserDialog" ] move container to workspace number $ws7
 
 assign [class="discord"] $ws8
 
@@ -237,7 +234,7 @@ set $monokai #f38d70
 client.focused           $active   $base $rosewater $rosewater $monokai
 client.focused_inactive  $overlay0 $base $text      $rosewater $overlay0
 client.unfocused         $overlay0 $base $text      $rosewater $overlay0
-client.urgent            $peach    $base $peach     $overlay0  $peach
+client.urgent            $monokai  $base $peach     $overlay0  $peach
 client.placeholder       $overlay0 $base $text      $overlay0  $overlay0
 client.background        $base
 
@@ -260,9 +257,8 @@ bar {
 
 # gaps
 gaps inner 12
-# round borders
-# border_radius 5
 
+# Controlling the order of windonws
 #default_border pixel 20
 #default_floating_border pixel 20
 for_window [class=".*"] border pixel 5
@@ -272,12 +268,13 @@ bindsym Control+Mod1+Delete exec $SCRIPT_DIR/shutdown_menu/shutdown_menu
 
 # home background image
 # exec_always feh --bg-fill /home/hart/Downloads/501424-pagani-huayra.jpg
-
 exec_always nitrogen --restore
 
 # staring firefox hotkey Alt+f
 bindsym Mod1+f exec firefox
 bindsym Mod1+t exec gnome-terminal
 bindsym $mod+Shift+s exec flameshot
+bindsym $mod+b exec kitty -e "btop"
+
 
 
