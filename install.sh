@@ -1,4 +1,8 @@
 #!/run/current-system/sw/bin/bash
+# This file is no longer used, I now use home-manager to manage my .dotfiles.
+# I Thought of keeping this file to remind myself of the way I used to do my
+# things. But you would say, "You have github for that", and I will tell you its
+# my repo, why should you give an F. Fork the repo and delete it for urself.
 
 # creates create symlinks for my dotfiles
 

@@ -1,7 +1,10 @@
 { ... }:
 {
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+  services.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+  };
+
   nixpkgs.config.pulseaudio = true;
 
   security.rtkit.enable = true;

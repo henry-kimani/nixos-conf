@@ -36,9 +36,8 @@ markup=none
 # See the script for details.
 
 [volume]
-label=   
-command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
-interval=persist
+LABEL=   
+command=$SCRIPT_DIR/volume
 # signal=1
 SUBSCRIBE=1
 LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
@@ -50,16 +49,36 @@ AUDIO_LOW_SYMBOL='  '
 DEFAULT_COLOR="#ffffff"
 USE_ALSA_NAME=0
 USE_DESCRIPTION=0
-UTED_COLOR="#a0a0a0"
+MUTED_COLOR="#a0a0a0"
 STEP=5%
 
+
+[rofi-calendar]
+command=$SCRIPT_DIR/rofi-calendar
+interval=3600
+#BAR_POSITION=bottom
+#WEEK_START=monday
+#DATEFTM=+%a %d %b %Y
+#SHORTFMT=+%d/%m/%Y
+#LABEL= 
+#FONT=Monospace 10
+#LEFTCLICK_PREV_MONTH=false
+#PREV_MONTH_TEXT=« previous month «
+#NEXT_MONTH_TEXT=» next month »
+#ROFI_CONFIG_FILE=/dev/null
+
+[docker]
+command=$SCRIPT_DIR/docker
+color=#0db7ed
+interval=10
+LABEL=🐳 
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=  
-command=$SCRIPT_DIR/memory/memory
+command=$SCRIPT_DIR/memory
 separator=false
 percent=false
 interval=30
@@ -106,7 +125,7 @@ interval=30
 # see the script for details.
 [cpu_usage]
 label= 
-command=$SCRIPT_DIR/cpu_usage/cpu_usage
+command=$SCRIPT_DIR/cpu_usage
 interval=10
 min_width=100.00%
 COLOR_NORMAL=#fff1f3
@@ -123,7 +142,7 @@ COLOR_CRIT=#fd6883
 # The battery instance defaults to 0.
 [battery]
 label=⚡
-command=$SCRIPT_DIR/battery/battery
+command=$SCRIPT_DIR/battery
 interval=30
 
 # Date Time
@@ -192,7 +211,7 @@ command=./shutdown_menu/shutdown_menu
 #ENABLE_OPTIONS=--column= --hide-header
 #ENABLE_CONFIRMATIONS=true
 #LAUNCHER=zenity
-#LOCKSCRIPT=i3locks --color=${BG_COLOR#"#"}
+LOCKSCRIPT=$SCRIPT_DIR/i3lock.sh
 
 
 

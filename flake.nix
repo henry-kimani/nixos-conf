@@ -16,7 +16,6 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in
   {
-    packages.${system}.install = (import ./install.nix { inherit pkgs; });
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit pkgs;};
