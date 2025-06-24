@@ -263,7 +263,7 @@ gaps inner 12
 #default_floating_border pixel 20
 for_window [class=".*"] border pixel 5
 
-bindsym Control+Mod1+Delete exec $SCRIPT_DIR/shutdown_menu
+bindsym Control+Mod1+Delete exec $SCRIPT_DIR/shutdown_menu/shutdown_menu
 
 
 # home background image

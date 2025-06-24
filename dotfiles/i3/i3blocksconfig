@@ -35,9 +35,9 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-[volume]
-LABEL=   
-command=$SCRIPT_DIR/volume
+# [volume]
+# LABEL=   
+# command=$SCRIPT_DIR/volume
 # signal=1
 SUBSCRIBE=1
 LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
@@ -52,26 +52,11 @@ USE_DESCRIPTION=0
 MUTED_COLOR="#a0a0a0"
 STEP=5%
 
-
-[rofi-calendar]
-command=$SCRIPT_DIR/rofi-calendar
-interval=3600
-#BAR_POSITION=bottom
-#WEEK_START=monday
-#DATEFTM=+%a %d %b %Y
-#SHORTFMT=+%d/%m/%Y
-#LABEL= 
-#FONT=Monospace 10
-#LEFTCLICK_PREV_MONTH=false
-#PREV_MONTH_TEXT=« previous month «
-#NEXT_MONTH_TEXT=» next month »
-#ROFI_CONFIG_FILE=/dev/null
-
-[docker]
-command=$SCRIPT_DIR/docker
-color=#0db7ed
-interval=10
-LABEL=🐳 
+# [docker]
+# command=$SCRIPT_DIR/docker
+# color=#0db7ed
+# interval=10
+# LABEL=🐳 🦭
 
 # Memory usage
 #
@@ -148,7 +133,7 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+ %d-%m   %H:%M'
+command=date '+ %d-%m    %H:%M'
 interval=5
 
 # Generic media player support
@@ -198,20 +183,20 @@ interval=5
 [shutdown]
 color=#fd6883
 full_text= 
-command=./shutdown_menu/shutdown_menu
+command=./my_scripts/shutdown_menu/shutdown_menu
 #FG_COLOR=#bbbbbb
-#BG_COLOR=#111111
+BG_COLOR=$SCRIPT_DIR/shutdown_menu/i3lock.png
 #HLFG_COLOR=#111111
 #HLBG_COLOR=#bbbbbb
 #BORDER_COLOR=#222222
 #ROFI_TEXT=Menu:
-#ROFI_OPTIONS=-width 11 -location 3 -hide-scrollbar -bw 2
+ROFI_OPTIONS=-width 11 -location 0 -hide-scrollbar -bw 2
 #ZENITY_TITLE=Menu
 #ZENITY_TEXT=Action:
 #ENABLE_OPTIONS=--column= --hide-header
 #ENABLE_CONFIRMATIONS=true
 #LAUNCHER=zenity
-LOCKSCRIPT=$SCRIPT_DIR/i3lock.sh
+#LOCKSCRIPT=i3lock -i "./i3lock.png"
 
 
 
