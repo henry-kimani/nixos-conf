@@ -1,23 +1,31 @@
 ## PREFACE
 Since i use nixos, btw, this repo includes the files that I use to create my desired nixos
-environment. This includes the packages and dotfiles e.g neovim, tmux etc
+environment. This includes the packages and dotfiles e.g neovim, tmux etc.
 
-## PREREQUSITS
+If you do decide to install it as your own, you might want to modify my packages,
+and install what you want. Note that my dotfiles will be installed too, if you
+installed my home-configuration.
 
-Here, I will only show you how to install it in nixos not via nix package manager since there
-are some minor differences in running the commands. But there are enough resources from the 
-internet to get you up to speed.
-    - nixos or
-    - nix package manager.
+## PREREQUISITES
 
+I install my configuration via NixOS which comes with Nix pre-installed. If your
+using another OS apart from NixOS, you might want to install the Nix package manager
+into your distribution.
+
+I will only show you how to install it in NixOS, not via Nix package manager since there
+are some minor differences in conguration and running the commands. But there are
+enough resources from the internet to get you up to speed.
+  - NixOS or
+  - Nix package manager.
 
 ## INSTALLATION
 
-You will need to be in the current directory of the source code for it to work.
+You will need to be in the current directory of the 
 
 ### Installing nixos configuration
 
 The configurations to be applied, will affect the whole system including all the users.
+
 ```bash
   git clone https://github.com/henry-kimani/nixos-conf && cd nixos-conf
 ```
@@ -32,27 +40,31 @@ But i recommend to first test if the configuration is successful and does achiev
   sudo nixos-rebuild test --flake .#default
 ```
 
-### Installing configurations that affect the user environment (home-manager)
+### Installing Home Manager
+
 It is worth noting the type of home-manager installation here is a standand alone hence it does not 
-require admin previledges to run and it is more reproducible in other OS's other that nixos that 
+require admin previledges to run and it is more reproducible in other OS's other that NixOS that 
 support the nix package manager.
 
 If you ran the above step first, home-manager will be installed for you system wide, otherwise, you 
-might need to install home-manager first before proceeding `nix-shell -p home-manager`.
+might need to install home-manager first before proceeding.
 
-The you may proceed with the installation.
+Then run the below command to install the home-manager configuration.
+
 ```bash
   home-manager switch --flake .
 ```
 
 ### Installing the dotfiles
-The `./flake.nix` file, has a derivation called `install` which should create symlinks from 
-the source code to the required locations for the dotfiles to work.
 
-```bash
-  nix run .#install
-```
+Dotfiles are managered with home-manager and will be installed automatically, 
+when you install my home-manager configuration
 
 ### :heart: Thanks to
 Huge Thanks to the nix and nixos community and everyone I used some of their code to create my 
-enviroment. Feel free to clone this repo.
+enviroment. 
+
+I will continue improving the code as time passes, to make it even easier to 
+install my configuration. I am thinking a wizard type of thing.
+
+Feel free to clone this repo.
