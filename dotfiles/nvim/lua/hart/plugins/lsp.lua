@@ -62,6 +62,19 @@ return {
             }
           }
         end,
+
+        -- Setup CVA to show intellisence for tailwind classes
+        ['tailwindcss'] = function ()
+          local lspconfig = require("lspconfig")
+          lspconfig.tailwindcss.setup {
+            capabilities = capabilities,
+            settings = {
+              tailwindCSS = {
+                classFunctions = { "cva", "cx" },
+              }
+            }
+          }
+        end
       }
     })
 
@@ -89,12 +102,12 @@ return {
       end
     })
 
-        -- tailwindcss colorizer auto completion
-        cmp.config.formatting = {
-            format = require("tailwindcss-colorizer-cmp").formatter
-        }
+    -- tailwindcss colorizer auto completion
+    cmp.config.formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter
+    }
 
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({
       snippet = {
