@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
 
   imports = [
+    inputs.zen-browser.homeModules.twilight-official
     ./modules/bundle.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -28,6 +29,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  # Enable zen browser
+  programs.zen-browser.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

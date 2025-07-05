@@ -8,6 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    /* Zen browser flake */
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, ... }@inputs: 
@@ -18,13 +24,13 @@
   {
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit pkgs;};
+      specialArgs = { inherit pkgs; };
       modules = [ ./nixos/configuration.nix ];
     };
 
     homeConfigurations = {
       henry = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        inherit pkgs inputs;
         modules = [ ./home-manager/home.nix ];
       };
     };
