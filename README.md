@@ -15,12 +15,10 @@ into your distribution.
 I will only show you how to install it in NixOS, not via Nix package manager since there
 are some minor differences in conguration and running the commands. But there are
 enough resources from the internet to get you up to speed.
-  - NixOS or
-  - Nix package manager.
 
 ## INSTALLATION
 
-You will need to be in the current directory of the 
+You will need to be in the current directory of the installation to work.
 
 ### Installing nixos configuration
 
@@ -57,7 +55,7 @@ Then run the below command to install the home-manager configuration.
 
 ### Installing the dotfiles
 
-Dotfiles are managered with home-manager and will be installed automatically, 
+Dotfiles are managed with home-manager and will be installed automatically, 
 when you install my home-manager configuration
 
 ### :heart: Thanks to

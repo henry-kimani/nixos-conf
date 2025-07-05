@@ -166,6 +166,7 @@ assign [class="Alacritty"] $ws1
 
 assign [class="firefox"] $ws2
 assign [class="Microsoft-edge"] $ws2
+assign [class="zen-twilight"] $ws2
 
 assign [class="org.gnome.Nautilus"] $ws3
 assign [class="libreoffice-startcenter"] $ws3
@@ -181,6 +182,8 @@ assign [class="Whatsapp-for-linux"] $ws7
 for_window [class="Microsoft-edge" instance="^crx__hnpfjngllnobngcgfapefoaidbinmjnm$" ] move container to workspace number $ws7
 
 assign [class="discord"] $ws8
+
+assign [class="Podman Desktop"] $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -258,13 +261,9 @@ bar {
 # gaps
 gaps inner 12
 
-# Controlling the order of windonws
-#default_border pixel 20
-#default_floating_border pixel 20
-for_window [class=".*"] border pixel 5
+for_window [class=".*"] border pixel 2
 
 bindsym Control+Mod1+Delete exec $SCRIPT_DIR/shutdown_menu/shutdown_menu
-
 
 # home background image
 # exec_always feh --bg-fill /home/hart/Downloads/501424-pagani-huayra.jpg
@@ -272,6 +271,7 @@ exec_always nitrogen --restore
 
 # staring firefox hotkey Alt+f
 bindsym Mod1+f exec firefox
+bindsym Mod1+z exec zen 
 bindsym Mod1+t exec gnome-terminal
 bindsym $mod+Shift+s exec flameshot
 bindsym $mod+b exec kitty -e "btop"
