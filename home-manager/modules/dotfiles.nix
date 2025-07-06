@@ -24,4 +24,5 @@
     "i3".source = ../../dotfiles/i3;
   };
 
+  xresources.path = "../../dotfiles/X/Xresources";
 }
