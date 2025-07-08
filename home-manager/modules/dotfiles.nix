@@ -24,5 +24,20 @@
     "i3".source = ../../dotfiles/i3;
   };
 
-  xresources.path = "../../dotfiles/X/Xresources";
+  xresources = {
+    properties = {
+      "XTerm.vt100.locale" = false;
+      "XTerm.vt100.utf8" = true;
+      "XTerm.vt100.saveLines" = 4096;
+      "Xcursor.theme" = "Fuchsia-Amber";
+    };
+    extraConfig = builtins.readFile(
+      pkgs.fetchFromGitHub {
+        owner = "mbadolato";
+        repo = "iTerm2-Color-Schemes";
+        rev = "506ab2b98b6546d1dc46327dfa1e1e3f8363fbc0";
+        hash = "sha256-gEdpowrYvDQ6ICBWxk5VKiYpmrJq+XvBPhgjcqvAGiE=";
+      } + "/Xresources/Monokai Pro"
+    );
+  };
 }
