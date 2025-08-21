@@ -1,30 +1,29 @@
 
 -- namespace
-local o = vim.opt
 
-o.termguicolors = true
-o.number = true
-o.numberwidth = 4
-o.relativenumber = true
-o.cursorline = true
-o.cursorlineopt = 'number'
-o.showtabline = 2
-o.linebreak = true
-o.showbreak = "  » "
-o.splitbelow = true
-o.splitright = true
-o.colorcolumn = "80";
+vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.numberwidth = 4
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'number'
+vim.opt.showtabline = 2
+vim.opt.linebreak = true
+vim.opt.showbreak = "  » "
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.colorcolumn = "80";
 
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
-o.scrolloff = 8
+vim.opt.scrolloff = 8
 
-o.smartindent = true
+vim.opt.smartindent = true
 
-o.wrap = false
+vim.opt.wrap = false
 
 
 vim.filetype.add({
