@@ -22,6 +22,7 @@
     "rofi".source = ../../dotfiles/rofi;
     "tmux".source = ../../dotfiles/tmux;
     "i3".source = ../../dotfiles/i3;
+    "i3status".source = ../../dotfiles/i3status;
   };
 
   xresources = {
