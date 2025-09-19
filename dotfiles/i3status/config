@@ -1,41 +1,37 @@
 
 general {
-  output_format = "dzen2"
+  output_format = "i3bar"
   colors = true
   interval = 5
 }
 
 order += "battery 0"
 order += "cpu_temperature 0"
-order += "load"
+order += "cpu_usage"
 order += "memory"
 order += "tztime local"
 
 battery 0 {
-  format = "%status %percentage %remaining %emptytime"
+  format = "%status %percentage %remaining"
   format_down = "No battery"
-  status_chr = "⚡ CHR"
-  status_bat = "🔋 BAT"
-  status_unk = "? UNK"
-  status_full = "☻ FULL"
-  status_idle = "☻ IDLE"
+  status_chr = "⚡"
+  status_bat = "🔋"
+  status_unk = "? "
+  status_full = "☻ "
+  status_idle = "☻ "
   path = "/sys/class/power_supply/BAT%d/uevent"
   low_threshold = 10
 }
 
-cpu_temperature {
-  format = " %degrees"
-  path = "/sys/devices/platform/coretemp.0/temp1_input"
-}
 
-load {
-  format = "%5min"
+cpu_usage {
+  format = "  %usage"
 }
 
 memory {
-  format = "%used"
+  format = "  %used / %total"
   threshold_degraded = "10%"
-  format_degraded = " %free"
+  format_degraded = "  %free"
 }
 
 tztime local {
