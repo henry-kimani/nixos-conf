@@ -29,6 +29,7 @@
     pkgs.cht-sh
     pkgs.vscode
     pkgs.dotnet-sdk_9
+    pkgs.podman-desktop
 
     # Javascript runtimes
     pkgs.nodejs_22
