@@ -10,7 +10,10 @@ in
   
   config = lib.mkIf cfg.enable {
     virtualisation = {
-      containers.enable = true;
+      containers = { 
+        enable = true;
+        registries.search = [ "docker.io" "quay.io" "public.ecr.aws" ];
+      };
       podman = {
         enable = true;
         # Create a docker alias for podman
