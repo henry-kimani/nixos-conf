@@ -5,5 +5,6 @@
     ./themes/theme.nix
     ./git.nix
     ./dotfiles.nix
+    ./cava.nix
   ];
 }
