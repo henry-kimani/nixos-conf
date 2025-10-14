@@ -42,6 +42,7 @@
     # Package managers
     pkgs.pnpm # javascript package manager
     pkgs.cargo # Rust package manager
+    pkgs.go # Go suite
 
     # Language servers
     pkgs.rust-analyzer # Rust language server
