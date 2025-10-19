@@ -6,5 +6,6 @@
     ./git.nix
     ./dotfiles.nix
     ./cava.nix
+    ./vim.nix
   ];
 }
