@@ -8,6 +8,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".p10k.zsh".source = ../../dotfiles/p10k/.p10k.zsh;
+    ".vimrc".source = ../../dotfiles/vim/.vimrc;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
