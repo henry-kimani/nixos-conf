@@ -1,6 +1,7 @@
 return {
-  'altermo/ulitimate-autopair.lua',
+  'windwp/nvim-autopairs',
   event = { 'InsertEnter', 'CmdlineEnter' },
-  branch = 'v0.6',
-  opts = {}
+  config = function ()
+    require("nvim-autopairs").setup({})
+  end
 }
