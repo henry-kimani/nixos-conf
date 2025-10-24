@@ -4,7 +4,9 @@ vim.g.mapleader = " "
 k.set('n', '<leader>e', vim.cmd.Ex)
 k.set('n', '<C-s>', vim.cmd.w)
 k.set('i', 'jk', '<C-[>')
-k.set('n', '<leader>t', vim.cmd.Trouble)
+
+k.set('n', '<leader>td', vim.cmd.Trouble)
+k.set('n', '<leader>tn', vim.cmd.tabnew)
 
 k.set('n', '<leader>r', '<cmd>nohlsearch<CR>')
 
@@ -13,7 +15,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Hightlight selection on yank',
   pattern = '*',
   callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 150 }
+    vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 150 })
   end,
 })
 

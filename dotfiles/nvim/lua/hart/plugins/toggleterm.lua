@@ -83,12 +83,6 @@ return {
             {noremap=true, silent=true}
         )
 
-        -- PYTHON
-        local python = Terminal:new({ cmd = "python3", hidden = true })
-        function _PYTHON_TOGGLE()
-            python:toggle()
-        end
-
         -- BTOP
         local btop = Terminal:new({ cmd = "btop", hidden = true });
         function _BTOP_TOGGLE()
