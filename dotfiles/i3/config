@@ -243,18 +243,21 @@ client.background        $base
 
 # bar
 bar {
-    status_command i3status
+  mode hide
+  status_command i3status
+
   colors {
     background         $base
-    statusline         #344
-    focused_statusline $monokai # status general color
-    active_workspace   $base $text $blue
-#    focused_separator  #fff
-    focused_workspace  $base $monokai $base
-    inactive_workspace $base $base $monokai
-    urgent_workspace   $base $base $surface1
-    binding_mode       $base $base $surface1
+      statusline         #344
+      focused_statusline $monokai # status general color
+      active_workspace   $base $text $blue
+      # focused_separator  #fff
+      focused_workspace  $base $monokai $base
+      inactive_workspace $base $base $monokai
+      urgent_workspace   $base $base $surface1
+      binding_mode       $base $base $surface1
   }
+
   font pango:DejaVu Sans 10
 }
 
@@ -272,9 +275,10 @@ exec_always nitrogen --restore
 # staring firefox hotkey Alt+f
 bindsym Mod1+f exec firefox
 bindsym Mod1+z exec zen 
-bindsym Mod1+t exec gnome-terminal
+bindsym Mod1+t exec xterm
 bindsym $mod+Shift+s exec flameshot
 bindsym $mod+b exec kitty -e "btop"
+bindsym $mod+m exec bar mode toggle
 
 
 
